@@ -72,18 +72,20 @@ class _DeviceState extends State<DeviceWidget> {
         width: double.infinity,
         child: RaisedButton(
             color:
-                widget.device.state == "0" ? Colors.lightGreen : Colors.white,
+                widget.device.state == "1" ? Colors.lightGreen : Colors.white,
             onPressed: () {
-              setState(() {
+             
                 Service.toggleDevice(widget.device.id).then((response) => {
                       if (response.statusCode == 200)
                         {
+                           setState(() {
                           widget.device.state == "0"
                               ? widget.device.state = "1"
-                              : widget.device.state = "0"
+                              : widget.device.state = "0";
+                              })
                         }
                     });
-              });
+              
             },
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

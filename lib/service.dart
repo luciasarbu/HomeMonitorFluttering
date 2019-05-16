@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:home_monitor_flutter/device.dart';
 
-const baseUrl = 'http://192.168.35.88/FarmMonitorServer/api/';
+const baseUrl = 'http://192.168.1.59/api/';
 
 class Service {
   static Future<List<Device>> getDevices() {
@@ -28,7 +28,7 @@ class Service {
   }
 
   static Future<Response> toggleDevice(String idDevice) {
-    var url = baseUrl + 'devices';
-    return put(url, body: {'value': idDevice});
+    var url = baseUrl + 'devices/' + idDevice;
+    return put(url);
   }
 }

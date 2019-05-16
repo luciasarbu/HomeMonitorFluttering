@@ -7,7 +7,7 @@ class NotificationsWidget extends StatefulWidget {
 }
 
 class _NotificationsState extends State<NotificationsWidget> {
-  final serverUrl = '192.168.35.88/hub';
+  final serverUrl = '192.168.1.201/hub';
   bool watcher = false;
   bool coco = false;
   bool main = false;
